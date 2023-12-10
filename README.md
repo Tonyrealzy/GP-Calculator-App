@@ -1,2 +1,2 @@
 # GP-Calculator-App
-My first Java project
+This is my first Java project with elev8 Academy.
