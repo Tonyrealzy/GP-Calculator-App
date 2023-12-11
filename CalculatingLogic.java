@@ -21,6 +21,11 @@ public class CalculatingLogic {
         ArrayList<Integer> gradeUnit = new ArrayList<Integer>();
         ArrayList<Integer> qualityPoint = new ArrayList<Integer>();
 
+        for (UserInputModel userInput : UserInput) {
+            gradeUnit.add(userInput.gradeUnit);  // GradeUnit being an Integer field in UserInputModel
+            qualityPoint.add(userInput.qualityPoint);  // QualityPoint being a Double field in UserInputModel
+        }
+
         int SumOfGradeUnits = calculateSum(gradeUnit);
         int SumOfQualityPoints = calculateSum(qualityPoint);
         GP = SumOfQualityPoints / SumOfGradeUnits;
