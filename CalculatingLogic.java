@@ -26,15 +26,15 @@ public class CalculatingLogic {
             qualityPoint.add(userInput.qualityPoint);  // QualityPoint being a Double field in UserInputModel
         }
 
-        int SumOfGradeUnits = calculateSum(gradeUnit);
-        int SumOfQualityPoints = calculateSum(qualityPoint);
+        double SumOfGradeUnits = calculateSum(gradeUnit);
+        double SumOfQualityPoints = calculateSum(qualityPoint);
         GP = SumOfQualityPoints / SumOfGradeUnits;
         return GP;
     }
 
     //Defining my method of getting sum of values in an array...
     private int calculateSum(ArrayList<Integer> array) {
-        int sum = 0;
+        double sum = 0;
 
         for (int value : array) {
             sum += value;
