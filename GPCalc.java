@@ -18,7 +18,7 @@ public class GPCalc {
         
         System.out.println("Enter the course name (type 'exit' to finish): ");
         String CName = input.next();
-        if (CName.equalsIgnoreCase("exit")) {
+        if (CName == null || CName.equalsIgnoreCase("exit")) {
             return HisInput;
         }
         System.out.print("Enter the course code: ");
@@ -78,8 +78,8 @@ public class GPCalc {
         return unit;
     }
 
-    private static int QualityPoint(int Weight, int GradeUnit){
-        int qualityPoint = Weight * GradeUnit;
+    private static int QualityPoint(int Weight, int GradUnit){
+        int qualityPoint = Weight * GradUnit;
         return qualityPoint;
     }
 
@@ -94,8 +94,8 @@ public class GPCalc {
         while (true) {
             UserInputModel HisInput = WhatUserInput();
 
-            if (HisInput.courseName.equalsIgnoreCase("exit")) {
-            System.out.println("Please hold on while we compute your GPA!");
+            if (HisInput.courseName == null || HisInput.courseName.equalsIgnoreCase("exit")) {
+            System.out.println("Please hold on while we compute your GPA!\n\n");
             break;
             }
 
@@ -105,9 +105,23 @@ public class GPCalc {
         //Computing the GPA...
         double GPA = Calc.getTheGPA(AllUserInput);
 
-        System.out.println("COURSE & CODE\tCOURSE UNIT\tGRADE\tGRADE-UNIT");
+        //16 14 7 12
 
-        System.out.printf("Your GPA is = %f to 2 decimal places.", GPA);
+        System.out.println("|----------------|--------------|-------|------------|");
+    
+
+        System.out.println("| COURSE & CODE  | COURSE UNIT  | GRADE | GRADE-UNIT |");
+
+        System.out.println("|----------------|--------------|-------|------------|");
+
+        for(UserInputModel HisInput : AllUserInput){
+            System.out.printf("|%-16s|%-14s|%-7s|%-12s|\n",
+            HisInput.courseName + " " + HisInput.courseCode, HisInput.courseWeight, HisInput.gradeType, HisInput.gradeUnit);
+        }
+
+        System.out.println("|----------------------------------------------------|\n\n");
+
+        System.out.printf("Your GPA is = %.2f to 2 decimal places.", GPA);
     }
 
 }
