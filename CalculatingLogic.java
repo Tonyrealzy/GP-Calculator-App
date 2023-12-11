@@ -34,7 +34,7 @@ public class CalculatingLogic {
 
     //Defining my method of getting sum of values in an array...
     private int calculateSum(ArrayList<Integer> array) {
-        double sum = 0;
+        int sum = 0;
 
         for (int value : array) {
             sum += value;
