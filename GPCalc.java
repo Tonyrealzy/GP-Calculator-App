@@ -95,7 +95,7 @@ public class GPCalc {
             UserInputModel HisInput = WhatUserInput();
 
             if (HisInput.courseName == null || HisInput.courseName.equalsIgnoreCase("exit")) {
-            System.out.println("Please hold on while we compute your GPA!\n\n");
+            System.out.println("\n\nPlease hold on while we compute your GPA.....\n");
             break;
             }
 
@@ -121,7 +121,7 @@ public class GPCalc {
 
         System.out.println("|----------------------------------------------------|\n\n");
 
-        System.out.printf("Your GPA is = %.2f to 2 decimal places.", GPA);
+        System.out.printf("Your GPA is = %.2f to 2 decimal places.\n\n", GPA);
     }
 
 }
