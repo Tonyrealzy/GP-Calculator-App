@@ -23,7 +23,7 @@ public class GPCalc {
         }
         System.out.print("Enter the course code: ");
         String Code = input.next();
-        System.out.print("Enter the course weight: ");
+        System.out.print("Enter the course unit: ");
         int Weight = input.nextInt();
         System.out.print("Enter your score for this course: ");
         int Score = input.nextInt();
